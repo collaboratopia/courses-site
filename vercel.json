@@ -1,0 +1,17 @@
+{
+  "version": 0,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/courses",
+      "dest": "/courses.js"
+    },
+    {
+      "src": "/courses/:id",
+      "dest": "/course.js"
+    }
+  ]
+}
