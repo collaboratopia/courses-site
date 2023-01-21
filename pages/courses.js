@@ -3,9 +3,9 @@ import path from 'path'
 
 export async function getServerSideProps(context) {
   // read the .json file from the data directory
-  const filePath = path.join(process.cwd(), 'data', 'course.json')
+  const filePath = path.join(process.cwd(), 'data', 'courses.json')
   const data = JSON.parse(fs.readFileSync(filePath))
-  return { props: { course: data } }
+  return { props: { courses: data } }
 }
 
 export default function Courses({ courses }) {
