@@ -34,3 +34,8 @@
   font-size: 1.2rem;
   color: #999;
 }
+
+.container {
+  width: 100%;
+  background-color: #333;
+}

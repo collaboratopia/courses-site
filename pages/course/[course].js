@@ -22,19 +22,19 @@ export async function getStaticProps(context) {
 
 export default function Course({ course }) {
   return (
-    <div className={styles.course}>
-      <h1 className={styles.course}>{course.title}</h1>
+    <div>
+    <h1 className={styles.course}>{course.title}</h1>
       <p className={styles.course}>{course.description}</p>
       <p className={styles.course}>Hello World!</p>
-      {/* <div>
-        <h2>Lessons</h2>
-        {course.lessons.map(lesson => (
+       <div>
+        <h2 className={styles.lesson}>Lessons</h2>
+        {/* {course.lessons.map(lesson => (
           <div key={lesson.title}>
             <h3>{lesson.title}</h3>
             <span>Duration: {lesson.duration}</span>
           </div>
-        ))}
-      </div> */}
+        ))} */}
+      </div>
     </div>
   )
 }
