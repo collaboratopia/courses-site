@@ -1,12 +1,13 @@
 import fs from 'fs'
 import path from 'path'
+import styles from '../../styles/Course.module.css'
 
 export async function getStaticPaths() {
   const filePath = path.join(process.cwd(), 'data', "template.json")
   const data = JSON.parse(fs.readFileSync(filePath))
-  const paths = data.map(course => `/${course.id}`)
+  const paths = data.map(course => {return {params: {course: course.id}}}
   return {
-    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    paths,
     fallback: false, // can also be true or 'blocking'
   }
 }
@@ -24,7 +25,7 @@ export default function Course({ course }) {
     <div>
       <h1>{course.title}</h1>
       <p>{course.description}</p>
-      <div>
+      {/* <div>
         <h2>Lessons</h2>
         {course.lessons.map(lesson => (
           <div key={lesson.title}>
@@ -32,7 +33,7 @@ export default function Course({ course }) {
             <span>Duration: {lesson.duration}</span>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
