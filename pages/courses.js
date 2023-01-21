@@ -4,7 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import styles from '../styles/Course.module.css'
 
-export default function Courses() {
+//export default function Courses() {
+export async function getStaticPaths() {
   const [coursesList, setCourses] = useState([])
 
   useEffect(() => {
