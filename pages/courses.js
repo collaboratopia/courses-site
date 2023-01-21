@@ -4,6 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import styles from '../styles/Course.module.css'
 
+const fs = require('fs-web');
+
 export default function Courses() {
   const [coursesList, setCourses] = useState([])
 
