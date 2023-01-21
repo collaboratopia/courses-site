@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 
+const fs = require('fs-web');
+
 export async function getStaticPaths() {
     // read the .json file from the data directory
     const filePath = path.join(process.cwd(), 'data', 'courses.json')
