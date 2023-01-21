@@ -2,15 +2,21 @@ import fs from 'fs'
 import path from 'path'
 
 export async function getStaticPaths() {
-    // read the .json file from the data directory
-    const filePath = path.join(process.cwd(), 'data', "template.json")
-    const data = JSON.parse(fs.readFileSync(filePath))
-    // paths will be the array of course ids
-    const paths = data.map(course => `/${course.id}`)
-    return {
-        paths,
-        fallback: false
-    }
+  const filePath = path.join(process.cwd(), 'data', "template.json")
+  const data = JSON.parse(fs.readFileSync(filePath))
+  const paths = data.map(course => `/${course.id}`)
+  return {
+    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    fallback: false, // can also be true or 'blocking'
+  }
+}
+
+// `getStaticPaths` requires using `getStaticProps`
+export async function getStaticProps(context) {
+  return {
+    // Passed to the page component as props
+    props: { course: {} },
+  }
 }
 
 export default function Course({ course }) {
