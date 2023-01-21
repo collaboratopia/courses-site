@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-export async function getStaticPaths() {
+export async function getServerSideProps() {
     // read the .json file from the data directory
     const filePath = path.join(process.cwd(), 'data', 'courses.json')
     const data = JSON.parse(fs.readFileSync(filePath))
