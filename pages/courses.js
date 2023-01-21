@@ -7,6 +7,7 @@ import styles from '../styles/Course.module.css'
 const fs = require('fs-web');
 
 export default function Courses() {
+  export async function getServerSideProps(context) {
   const [coursesList, setCourses] = useState([])
 
   useEffect(() => {
@@ -31,5 +32,6 @@ export default function Courses() {
       </ul>
     </div>
   )
+}
 }
 
