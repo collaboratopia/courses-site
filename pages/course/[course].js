@@ -25,6 +25,7 @@ export default function Course({ course }) {
     <div className={styles.course}>
       <h1 className={styles.course}>{course.title}</h1>
       <p className={styles.course}>{course.description}</p>
+      <p className={styles.course}>Hello World!</p>
       {/* <div>
         <h2>Lessons</h2>
         {course.lessons.map(lesson => (
