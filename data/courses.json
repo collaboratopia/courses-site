@@ -1,1 +1,17 @@
-[  {    "id": "1",    "title": "Introduction to JavaScript",    "description": "Learn the basics of JavaScript and how to use it to create dynamic web pages."  },  {    "id": "2",    "title": "Advanced JavaScript",    "description": "Take your JavaScript skills to the next level and learn how to create complex web applications."  },  {    "id": "3",    "title": "Introduction to React",    "description": "Learn the basics of React and how to use it to build user interfaces for web applications."  }]
+[
+    {
+        "id": 1,
+        "title": "Introduction to React",
+        "description": "Learn the basics of React and how to build web applications using this popular JavaScript library."
+    },
+    {
+        "id": 2,
+        "title": "Advanced JavaScript",
+        "description": "Take your JavaScript skills to the next level with this course that covers advanced topics such as closures, prototypes, and asynchronous programming."
+    },
+    {
+        "id": 3,
+        "title": "Data Structures and Algorithms",
+        "description": "Lorum Ipsum"
+    }
+  ]
