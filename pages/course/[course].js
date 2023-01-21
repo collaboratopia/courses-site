@@ -15,41 +15,30 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
   return {
-    // Passed to the page component as props
-    props: { course: {
-      <div>
-        <h1 className={styles.course}>{course.title}</h1>
-        <p className={styles.course}>{course.description}</p>
-        <p className={styles.course}>Hello World!</p>
-        <div>
-          <h2 className={styles.lesson}>Lessons</h2>
-          {course.lessons.map(lesson => (
-            <div key={lesson.title}>
+{
+  props: {
+     course: {
+        …data-from-file
+      }
+   }
+}
+
+
+export default function Course({ course }) {
+  return (
+    <div>
+    <h1 className={styles.course}>{course.title}</h1>
+      <p className={styles.course}>{course.description}</p>
+      <p className={styles.course}>Hello World!</p>
+       <div>
+        <h2 className={styles.lesson}>Lessons</h2>
+        {/* {course.lessons.map(lesson => (
+          <div key={lesson.title}>
             <h3>{lesson.title}</h3>
             <span>Duration: {lesson.duration}</span>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
-    } },
-  }
+  )
 }
-
-// export default function Course({ course }) {
-//   return (
-//     <div>
-//     <h1 className={styles.course}>{course.title}</h1>
-//       <p className={styles.course}>{course.description}</p>
-//       <p className={styles.course}>Hello World!</p>
-//        <div>
-//         <h2 className={styles.lesson}>Lessons</h2>
-//         {/* {course.lessons.map(lesson => (
-//           <div key={lesson.title}>
-//             <h3>{lesson.title}</h3>
-//             <span>Duration: {lesson.duration}</span>
-//           </div>
-//         ))} */}
-//       </div>
-//     </div>
-//   )
-// }
