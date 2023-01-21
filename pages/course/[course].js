@@ -15,12 +15,8 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
   return {
-{
-  props: {
-     course: {
-        …data-from-file
-      }
-   }
+        
+  }
 }
 
 
