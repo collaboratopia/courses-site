@@ -1,15 +1,14 @@
 import fs from 'fs'
 import path from 'path'
 
-export async function getServerSideProps() {
+export async function getStaticPaths() {
     // read the .json file from the data directory
     const filePath = path.join(process.cwd(), 'data', "template.json")
     const data = JSON.parse(fs.readFileSync(filePath))
-      console.log(data)
     // paths will be the array of course ids
-    //const paths = data.map(course => `/courses/${course.id}`)
+    const paths = data.map(course => `/${course.id}`)
     return {
-        //paths,
+        paths,
         fallback: false
     }
 }
