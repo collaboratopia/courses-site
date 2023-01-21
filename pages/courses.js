@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
+import styles from '../styles/Course.module.css'
 
 export default function Courses() {
   const [coursesList, setCourses] = useState([])
