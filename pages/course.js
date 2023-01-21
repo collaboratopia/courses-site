@@ -1,13 +1,20 @@
-import React from 'react';
-import styles from '../styles/Course.module.css'
+import fs from 'fs'
+import path from 'path'
 
-export default function Course() {
+export async function getStaticProps({ params }) {
+  // read the .json file from the data directory
+  const filePath = path.join(process.cwd(), 'data', `course-${params.id}.json`)
+  const data = JSON.parse(fs.readFileSync(filePath))
+  return { props: { course: data } }
+}
+
+export default function Course({ course }) {
   return (
-    <div className={styles.course}>
+    <div>
       <h1>{course.title}</h1>
-      <p className={styles.description}>{course.description}</p>
+      <p>{course.description}</p>
       <div>
-        <h2 className={styles.lesson}>Lessons</h2>
+        <h2>Lessons</h2>
         {course.lessons.map(lesson => (
           <div key={lesson.title}>
             <h3>{lesson.title}</h3>
@@ -18,4 +25,3 @@ export default function Course() {
     </div>
   )
 }
-
