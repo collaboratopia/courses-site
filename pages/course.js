@@ -1,11 +1,16 @@
 import fs from 'fs'
 import path from 'path'
 
-export async function getServerSideProps({ params }) {
-  // read the .json file from the data directory
-  const filePath = path.join(process.cwd(), 'data', `course-${params.id}.json`)
-  const data = JSON.parse(fs.readFileSync(filePath))
-  return { props: { course: data } }
+export async function getStaticPaths() {
+    // read the .json file from the data directory
+    const filePath = path.join(process.cwd(), 'data', 'courses.json')
+    const data = JSON.parse(fs.readFileSync(filePath))
+    // paths will be the array of course ids
+    const paths = data.map(course => `/courses/${course.id}`)
+    return {
+        paths,
+        fallback: false
+    }
 }
 
 export default function Course({ course }) {
