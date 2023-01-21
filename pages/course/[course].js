@@ -5,8 +5,7 @@ import styles from '../../styles/Course.module.css'
 export async function getStaticPaths() {
   const filePath = path.join(process.cwd(), 'data', "template.json")
   const course = JSON.parse(fs.readFileSync(filePath))
-  //const paths = data.map(course => {return {params: {course: course.id}}})
-  const paths = course.map(course => `/course/${course.id}`);
+  const paths = course.map(course => `/course/${course.title.replace(" ","-")}`);
   return {
     paths: paths,
     fallback: false, // can also be true or 'blocking'
