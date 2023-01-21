@@ -4,10 +4,11 @@ import styles from '../../styles/Course.module.css'
 
 export async function getStaticPaths() {
   const filePath = path.join(process.cwd(), 'data', "template.json")
-  const data = JSON.parse(fs.readFileSync(filePath))
-  const paths = data.map(course => {return {params: {course: course.id}}}
+  const course = JSON.parse(fs.readFileSync(filePath))
+  //const paths = data.map(course => {return {params: {course: course.id}}})
+  const paths = course.map(course => `/course/${course.id}`);
   return {
-    paths,
+    paths: paths,
     fallback: false, // can also be true or 'blocking'
   }
 }
@@ -22,9 +23,9 @@ export async function getStaticProps(context) {
 
 export default function Course({ course }) {
   return (
-    <div>
-      <h1>{course.title}</h1>
-      <p>{course.description}</p>
+    <div className={styles.course}>
+      <h1 className={styles.course}>{course.title}</h1>
+      <p className={styles.course}>{course.description}</p>
       {/* <div>
         <h2>Lessons</h2>
         {course.lessons.map(lesson => (
