@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "title": "Introduction to JavaScript",
+  "description": "Learn the basics of JavaScript",
+  "instructor": "John Smith",
+  "duration": "8 weeks",
+  "level": "Beginner",
+  "lessons": [
+    { "title": "JavaScript basics", "duration": "2 hours" },
+    { "title": "Variables and data types", "duration": "1 hour" },
+    { "title": "Control structures", "duration": "1.5 hours" },
+    { "title": "Functions", "duration": "2 hours" },
+    { "title": "Objects and Arrays", "duration": "1.5 hours" }
+  ]
+}
+
