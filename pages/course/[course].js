@@ -17,7 +17,11 @@ export async function getStaticProps(context) {
    return {
     props: {
       course: {
-      
+        "title": "",
+        "description": "",
+        "instructor": "",
+        "duration": "",
+        "level": "",
       }
     }
   }
